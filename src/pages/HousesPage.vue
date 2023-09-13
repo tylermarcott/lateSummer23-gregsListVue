@@ -4,9 +4,13 @@
 
 
 <template>
-  <div v-for="house in houses" :key="house.id">
+  <!-- <div v-for="house in houses" :key="house.id">
     {{ house }}
-  </div>
+  </div> -->
+
+  {{ houses }}
+
+  <div>hey</div>
 </template>
 
 
@@ -23,7 +27,9 @@ import { AppState } from '../AppState.js'
 export default {
   setup() {
 
-    onMounted(() => getHouses())
+    onMounted(() => {
+      getHouses()
+    })
 
     async function getHouses() {
       try {
@@ -32,15 +38,16 @@ export default {
       } catch (error) {
         Pop.error(error)
       }
-
-      // TODO: now I have to create a compute in order to bring in the data from the appstate, which goe sin the return
-
-      return {
-        houses: computed(() => AppState.houses)
-      }
-
-
     }
+
+    // TODO: now I have to create a compute in order to bring in the data from the appstate, which goe sin the return
+
+    return {
+      houses: computed(() => AppState.houses)
+    }
+
+
+
   },
 };
 </script>

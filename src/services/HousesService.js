@@ -8,19 +8,14 @@ import { House } from "../models/House.js"
 class HousesService {
 
   async getHouses() {
-    try {
-      const res = await api.get('api/houses')
+    const res = await api.get('api/houses')
 
-      logger.log('houses data here:', res.data)
+    logger.log('houses data here:', res.data)
 
-      AppState.houses = res.data.map(house => new House(house))
 
-    } catch (error) {
-      Pop.error(error)
-    }
+
+    AppState.houses = res.data.map(house => new House(house))
   }
-
 }
-
 
 export const housesService = new HousesService()
