@@ -53,7 +53,6 @@
 
 import { ref } from "vue";
 import Pop from "../utils/Pop.js";
-import { logger } from "../utils/Logger.js";
 import { housesService } from "../services/HousesService.js";
 
 

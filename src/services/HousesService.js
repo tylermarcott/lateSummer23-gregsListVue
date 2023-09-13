@@ -1,6 +1,7 @@
 import { AppState } from "../AppState.js"
 import { api } from "./AxiosService.js"
 import { House } from "../models/House.js"
+import { logger } from "../utils/Logger.js"
 
 
 class HousesService {
@@ -16,6 +17,10 @@ class HousesService {
     const newHouse = new House(res.data)
     AppState.houses.push(newHouse)
     return newHouse
+  }
+
+  async deleteHouse() {
+    logger.log('deleting house')
   }
 }
 
