@@ -6,13 +6,17 @@
       </h1>
       <!-- NOTE router-link should be used whenever clicking something should take you to a new place -->
       <router-link :to="{ name: 'Cars' }">
-        Cars 🚗
+        <div class="m-2">
+          Cars 🚗
+        </div>
       </router-link>
       <!-- <button class="btn btn-primary" @click="goToCarsPage">Cars link via Code</button> -->
       <!-- NOTE: commenting out the page link via code, only need to use one, the router-link works just fine for what we are doing and I don't need to create a function for it -->
 
       <router-link :to="{ name: 'Houses' }">
-        Houses 🏚
+        <div class="m-2">
+          Houses 🏚
+        </div>
       </router-link>
       <!-- <button class="btn btn-secondary" @click="goToHousesPage">Houses link via Code</button> -->
     </div>

@@ -10,5 +10,9 @@ export const AppState = reactive({
   /**@type {Car[]} */
   cars: [],
   /**@type {Car} */
-  activeCar: null
+  activeCar: null,
+
+
+  /**@type {House[]} */
+  houses: []
 })
