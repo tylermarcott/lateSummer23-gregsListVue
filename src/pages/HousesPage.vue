@@ -1,16 +1,19 @@
 
 
-<!-- TODO: now I want to be able to draw the raw data of the houses to the page. Start by creating a service and getting some houses -->
+<!-- TODO: now I need to create a form component so I can do my create! -->
 
 
 <template>
-  <!-- <div v-for="house in houses" :key="house.id">
-    {{ house }}
-  </div> -->
+  <div class="container">
 
-  {{ houses }}
+    <HouseForm />
 
-  <div>hey</div>
+    <div class="col-12">
+      <div v-for="house in houses" :key="house.id">
+        <HouseCard :house="house" />
+      </div>
+    </div>
+  </div>
 </template>
 
 
@@ -53,4 +56,25 @@ export default {
 </script>
 
 
-<style></style>
+<style>
+.img {
+  height: 20vh;
+  width: 20vh;
+}
+
+.house-card {
+  background-color: #ede2e2;
+  border: solid #0e0d0d 2px;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all .1s ease;
+  cursor: pointer;
+
+
+  &:hover {
+    transition: all .2s ease;
+    transform: scale(1.05);
+  }
+
+}
+</style>
