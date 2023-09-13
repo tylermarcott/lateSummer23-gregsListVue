@@ -5,10 +5,16 @@
         Gregslist
       </h1>
       <!-- NOTE router-link should be used whenever clicking something should take you to a new place -->
-      <router-link :to="{name: 'Cars'}">
+      <router-link :to="{ name: 'Cars' }">
         Cars 🚗
       </router-link>
-      <button class="btn btn-primary" @click="goToCarsPage">Cars link via Code</button>
+      <!-- <button class="btn btn-primary" @click="goToCarsPage">Cars link via Code</button> -->
+      <!-- NOTE: commenting out the page link via code, only need to use one, the router-link works just fine for what we are doing and I don't need to create a function for it -->
+
+      <router-link :to="{ name: 'Houses' }">
+        Houses 🏚
+      </router-link>
+      <!-- <button class="btn btn-secondary" @click="goToHousesPage">Houses link via Code</button> -->
     </div>
   </div>
 </template>
@@ -21,10 +27,10 @@ export default {
   setup() {
     const router = useRouter()
     return {
-      goToCarsPage(){
+      goToCarsPage() {
         logger.log('Going to the cars page now')
         // NOTE router.push should be used only for automatically navigating the user when certain code process are done
-        router.push({name: 'Cars'})
+        router.push({ name: 'Cars' })
       }
     }
   }
